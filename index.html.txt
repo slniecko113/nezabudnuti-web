@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nezabudnutí – Platforma pomáhajúcich organizácií</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* TODO: doplniť presné HEX farby */
+      --primary-color: #FF5A4A;  /* primárna */
+      --background-light: #F4EBFF;  /* podklad */
+      --text-color: #333333;
+      --font-body: 'Inter', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-color);
+      background: var(--background-light);
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid var(--primary-color);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-left: 1rem;
+    }
+
+    .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      color: var(--primary-color);
+    }
+
+    .logo-img { height: 48px; width: auto; }
+
+    nav ul { list-style: none; display: flex; gap: 1rem; margin-right: 1rem; }
+
+    nav a { text-decoration: none; color: var(--text-color); font-weight: 600; }
+
+    nav a:hover { color: var(--primary-color); }
+
+    .hero { text-align: center; padding: 4rem 1rem 3rem 1rem; }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .hero p { max-width: 700px; margin: 0 auto; font-size: 1.125rem; }
+
+    .hero-img {
+      width: 100%;
+      height: auto;
+      margin: 2rem auto 0 auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    }
+
+    section { max-width: 900px; margin: 3rem auto; padding: 0 1rem; }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      color: var(--primary-color);
+      margin-bottom: 0.75rem;
+    }
+
+    ul { margin-left: 1.25rem; padding-left: 0.5rem; list-style-type: disc; }
+
+    /* Galéria */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .cta { text-align: center; margin: 4rem 0; }
+
+    .cta a {
+      display: inline-block;
+      background: var(--primary-color);
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 3px solid var(--primary-color);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .social-links a { margin: 0 0.5rem; text-decoration: none; color: var(--primary-color); }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/nezabudnuti-logo.png" alt="Logo nezabudnutí" class="logo-img">
+      <span class="logo-text">nezabudnutí.</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#o-projekte">O projekte</a></li>
+        <li><a href="#ciele">Zámery</a></li>
+        <li><a href="#pomoc">Ako pomáhame</a></li>
+        <li><a href="#galeria">Galéria</a></li>
+        <li><a href="#zapoj-sa">Zapoj sa</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Spolu pre dôstojnú starostlivosť</h1>
+    <p>Meníme systém pomoci tak, aby bola odborná, dostupná a dôstojná pre každého, kto ju potrebuje.</p>
+    <img src="images/main-banner.jpg" alt="Staršia pani pri čaji – symbol dôstojnosti" class="hero-img">
+  </section>
+
+  <section id="o-projekte">
+    <h2>O projekte</h2>
+    <p>Platforma pomáhajúcich organizácií – nezabudnutí. spája mimovládne organizácie, ktoré denne pomáhajú
+      ľuďom v ťažkých životných situáciách od seniorov až po rodiny v kríze. Projekt prináša systémovú zmenu
+      do hospicovej a paliatívnej starostlivosti, prepája zdravotné, sociálne a komunitné služby a zaisťuje, aby
+      pomoc bola dostupná tam, kde je najviac potrebná.</p>
+  </section>
+
+  <section id="ciele">
+    <h2>Kľúčové zámery</h2>
+    <ul>
+      <li>Systémovo ukotviť a rozvíjať hospicovú a paliatívnu starostlivosť.</li>
+      <li>Reagovať na demografické zmeny a nárast počtu seniorov.</li>
+      <li>Zlepšiť financovanie a kvalitu služieb naprieč sektormi.</li>
+      <li>Nastaviť spravodlivý a udržateľný model financovania.</li>
+      <li>Riešiť dlhodobú finančnú podvýživenosť pomáhajúcich organizácií.</li>
+    </ul>
+  </section>
+
+  <!-- Galéria -->
+  <section id="galeria">
+    <h2>Naše aktivity</h2>
+    <p>Fotky zachytávajú spoluprácu, podporu a obhajobu lepšieho systému.</p>
+
+    <div class="gallery">
+      <img src="images/hospic.jpg" alt="Klientka hospicu v starostlivosti">
+      <img src="images/amazonky.jpg" alt="Spolupracujeme pre lepší život">
+      <img src="images/advokacia.jpg" alt="Advokácia reforiem">
+      <img src="images/ig-1.jpg" alt="Dobrovoľníci pri práci">
+    </div>
+  </section>
+
+  <section id="pomoc">
+    <h2>Ako pomáhame</h2>
+    <ul>
+      <li>Budujeme udržateľný model starostlivosti spájajúci zdravotné a sociálne služby.</li>
+      <li>Podporujeme spoluprácu poskytovateľov, samospráv a štátu.</li>
+      <li>Zapájame verejnosť a meníme vnímanie staroby a umierania.</li>
+      <li>Prepájame generácie cez dobrovoľnícke programy.</li>
+      <li>Advokujeme legislatívne a finančné reformy pre stabilitu sektora.</li>
+    </ul>
+  </section>
+
+  <section id="zapoj-sa">
+    <h2>Zapoj sa</h2>
+    <p>Chcete sa podieľať na systémovej zmene? Pomôžte nám ako dobrovoľník, partner alebo darca.</p>
+    <div class="cta">
+      <a href="#kontakt">Napíšte nám</a>
+    </div>
+  </section>
+
+  <footer id="kontakt">
+    <p>Kontaktujte nás na <a href="mailto:info@nezabudnuti.sk">info@nezabudnuti.sk</a></p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/nezabudnuti.sk/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61569530405126" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.linkedin.com/company/asociácia-hospicovej-a-paliatívnej-starostlivosti-slovenska/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p>&copy; 2025 nezabudnutí.</p>
+  </footer>
+</body>
+</html>
