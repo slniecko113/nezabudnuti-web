@@ -1,214 +1,90 @@
+
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nezabudnutí – Platforma pomáhajúcich organizácií</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Platforma nezabudnuti. podporuje dôstojnú paliatívnu a sociálnu starostlivosť." />
+  <title>nezabudnuti. – Platforma paliatívnej a sociálnej starostlivosti</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Feijoa&family=Agentur&display=swap" />
   <style>
-    :root {
-      /* TODO: doplniť presné HEX farby */
-      --primary-color: #FF5A4A;  /* primárna */
-      --background-light: #F4EBFF;  /* podklad */
-      --text-color: #333333;
-      --font-body: 'Inter', sans-serif;
-      --font-heading: 'Playfair Display', serif;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: var(--font-body);
-      color: var(--text-color);
-      background: var(--background-light);
-      line-height: 1.6;
-    }
-
-    header {
-      background: #ffffff;
-      padding: 1rem 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 3px solid var(--primary-color);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-left: 1rem;
-    }
-
-    .logo-text {
-      font-family: var(--font-heading);
-      font-size: 1.75rem;
-      color: var(--primary-color);
-    }
-
-    .logo-img { height: 48px; width: auto; }
-
-    nav ul { list-style: none; display: flex; gap: 1rem; margin-right: 1rem; }
-
-    nav a { text-decoration: none; color: var(--text-color); font-weight: 600; }
-
-    nav a:hover { color: var(--primary-color); }
-
-    .hero { text-align: center; padding: 4rem 1rem 3rem 1rem; }
-
-    .hero h1 {
-      font-family: var(--font-heading);
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-    }
-
-    .hero p { max-width: 700px; margin: 0 auto; font-size: 1.125rem; }
-
-    .hero-img {
-      width: 100%;
-      height: auto;
-      margin: 2rem auto 0 auto;
-      display: block;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
-    }
-
-    section { max-width: 900px; margin: 3rem auto; padding: 0 1rem; }
-
-    h2 {
-      font-family: var(--font-heading);
-      font-size: 1.75rem;
-      color: var(--primary-color);
-      margin-bottom: 0.75rem;
-    }
-
-    ul { margin-left: 1.25rem; padding-left: 0.5rem; list-style-type: disc; }
-
-    /* Galéria */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-
-    .cta { text-align: center; margin: 4rem 0; }
-
-    .cta a {
-      display: inline-block;
-      background: var(--primary-color);
-      color: #ffffff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    footer {
-      background: #ffffff;
-      border-top: 3px solid var(--primary-color);
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    .social-links a { margin: 0 0.5rem; text-decoration: none; color: var(--primary-color); }
+    body { font-family: 'Feijoa', serif; margin: 0; background-color: #F2F2F2; color: #2C2C2C; }
+    header, nav, footer { background-color: #E5DCDD; }
+    nav { position: sticky; top: 0; display: flex; justify-content: space-between; padding: 1rem; z-index: 10; }
+    nav a { font-family: 'Agentur', sans-serif; margin: 0 0.5rem; text-decoration: none; color: #2C2C2C; }
+    nav .cta { color: #fff; background-color: #F3512F; padding: 0.5rem 1rem; border-radius: 5px; }
+    .language-toggle { margin-left: auto; }
+    .hero { position: relative; color: white; text-align: center; }
+    .hero img { width: 100%; height: auto; display: block; }
+    .hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 2rem; background: rgba(0, 0, 0, 0.5); border-radius: 8px; max-width: 90%; }
+    .hero-text h1 { font-family: 'Agentur', sans-serif; font-size: 2rem; margin: 0; }
+    .hero-text p { font-size: 1.2rem; margin: 1rem 0; }
+    .hero-text .cta-btn { background-color: #F3512F; color: white; padding: 1rem; border: none; border-radius: 5px; text-decoration: none; font-size: 1rem; display: inline-block; }
+    .section { padding: 2rem 1rem; max-width: 800px; margin: auto; }
+    .features { display: flex; flex-direction: column; gap: 1.5rem; }
+    .feature { background: #fff; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .cta-section { background: #E5DCDD; text-align: center; padding: 2rem 1rem; }
+    .cta-section p { margin-bottom: 1rem; font-size: 1.1rem; }
+    footer { padding: 2rem 1rem; font-size: 0.9rem; text-align: center; }
+    form { display: flex; flex-direction: column; gap: 0.5rem; max-width: 400px; margin: auto; }
+    input, textarea { padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+    button { background: #2C5FC4; color: white; padding: 0.75rem; border: none; border-radius: 4px; cursor: pointer; }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="logo">
-      <img src="images/nezabudnuti-logo.png" alt="Logo nezabudnutí" class="logo-img">
-      <span class="logo-text">nezabudnutí.</span>
+  <header class="hero">
+    <img src="images/main-banner.jpeg" alt="Elderly person at table" />
+    <div class="hero-text">
+      <h1>Každý človek si zaslúži dôstojnú starostlivosť, aj na konci života.</h1>
+      <p>Darujte nádej – Podporte nás</p>
+      <a href="https://donio.sk" class="cta-btn">Podporte nás</a>
+      <p><em>platforma paliatívnej a sociálnej starostlivosti</em></p>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#o-projekte">O projekte</a></li>
-        <li><a href="#ciele">Zámery</a></li>
-        <li><a href="#pomoc">Ako pomáhame</a></li>
-        <li><a href="#galeria">Galéria</a></li>
-        <li><a href="#zapoj-sa">Zapoj sa</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <section class="hero">
-    <h1>Spolu pre dôstojnú starostlivosť</h1>
-    <p>Meníme systém pomoci tak, aby bola odborná, dostupná a dôstojná pre každého, kto ju potrebuje.</p>
-    <img src="images/main-banner.jpg" alt="Staršia pani pri čaji – symbol dôstojnosti" class="hero-img">
-  </section>
-
-  <section id="o-projekte">
-    <h2>O projekte</h2>
-    <p>Platforma pomáhajúcich organizácií – nezabudnutí. spája mimovládne organizácie, ktoré denne pomáhajú
-      ľuďom v ťažkých životných situáciách od seniorov až po rodiny v kríze. Projekt prináša systémovú zmenu
-      do hospicovej a paliatívnej starostlivosti, prepája zdravotné, sociálne a komunitné služby a zaisťuje, aby
-      pomoc bola dostupná tam, kde je najviac potrebná.</p>
-  </section>
-
-  <section id="ciele">
-    <h2>Kľúčové zámery</h2>
+  <section class="section" id="about">
+    <h2>O platforme</h2>
+    <p>Projekt Platforma pomáhajúcich organizácií – nezabudnutí. je strategická iniciatíva, ktorá prináša systémovú zmenu do starostlivosti o ľudí v ťažkých životných situáciách – od seniorov, ľudí s fyzickým alebo mentálnym znevýhodnením, po osoby na konci života a rodiny v núdzi.</p>
+    <p>Cieľom je vytvoriť prostredie, kde môžu tieto organizácie fungovať stabilne, odborne a s dôstojnosťou. Podporujeme ich odborným poradenstvom, obhajobou, vzdelávaním a komunitným prepájaním.</p>
     <ul>
-      <li>Systémovo ukotviť a rozvíjať hospicovú a paliatívnu starostlivosť.</li>
-      <li>Reagovať na demografické zmeny a nárast počtu seniorov.</li>
-      <li>Zlepšiť financovanie a kvalitu služieb naprieč sektormi.</li>
-      <li>Nastaviť spravodlivý a udržateľný model financovania.</li>
-      <li>Riešiť dlhodobú finančnú podvýživenosť pomáhajúcich organizácií.</li>
+      <li>Systémovo ukotvujeme hospicovú a paliatívnu starostlivosť ako súčasť zdravotného a sociálneho systému.</li>
+      <li>Zlepšujeme financovanie a prepojenosť služieb naprieč sektormi.</li>
+      <li>Budujeme udržateľný model starostlivosti spájajúci zdravotné, sociálne a komunitné zložky.</li>
+      <li>Podporujeme spoluprácu medzi poskytovateľmi, samosprávami, štátom a občianskym sektorom.</li>
+      <li>Zapájame verejnosť a meníme vnímanie staroby a umierania ako prirodzenej súčasti života.</li>
     </ul>
+    <p>Platforma stojí na hodnotách dôstojnosti, odbornosti a solidarity. Zastrešuje skupinu mimovládnych neziskových organizácií, ktoré pomáhajú denne ľuďom v zdravotnej, sociálnej a mentálnej núdzi.</p>
   </section>
 
-  <!-- Galéria -->
-  <section id="galeria">
-    <h2>Naše aktivity</h2>
-    <p>Fotky zachytávajú spoluprácu, podporu a obhajobu lepšieho systému.</p>
-
-    <div class="gallery">
-      <img src="images/laskava-staroba.jpg" alt="Klientka hospicu v starostlivosti">
-      <img src="images/amazonky.jpg" alt="Spolupracujeme pre lepší život">
-      <img src="images/advokacia.jpg" alt="Advokácia reforiem">
-      <img src="images/ig-1.jpg" alt="Dobrovoľníci pri práci">
+  <section class="section features">
+    <div class="feature">
+      <h3>Podpora členov</h3>
+      <p>Pomáhame našim členom rásť a zdieľať skúsenosti.</p>
+    </div>
+    <div class="feature">
+      <h3>Odborné poradenstvo</h3>
+      <p>Spolupracujeme s odborníkmi na poskytovanie kvalitnej starostlivosti.</p>
+    </div>
+    <div class="feature">
+      <h3>Obhajoba</h3>
+      <p>Reprezentujeme potreby pacientov a poskytovateľov pred verejnosťou a štátom.</p>
+    </div>
+    <div class="feature">
+      <h3>Vzdelávanie</h3>
+      <p>Organizujeme školenia a workshopy pre profesionálov aj verejnosť.</p>
     </div>
   </section>
 
-  <section id="pomoc">
-    <h2>Ako pomáhame</h2>
-    <ul>
-      <li>Budujeme udržateľný model starostlivosti spájajúci zdravotné a sociálne služby.</li>
-      <li>Podporujeme spoluprácu poskytovateľov, samospráv a štátu.</li>
-      <li>Zapájame verejnosť a meníme vnímanie staroby a umierania.</li>
-      <li>Prepájame generácie cez dobrovoľnícke programy.</li>
-      <li>Advokujeme legislatívne a finančné reformy pre stabilitu sektora.</li>
-    </ul>
+  <section class="section">
+    <h2>Advokačná činnosť</h2>
+    <img src="images/advokacia.jpeg" alt="Tlačová konferencia" style="width:100%; border-radius:8px; margin:1rem 0;" />
+    <p><em>„Spájame odborníkov a verejnosť pre spravodlivejší systém starostlivosti.“</em></p>
   </section>
 
-  <section id="zapoj-sa">
-    <h2>Zapoj sa</h2>
-    <p>Chcete sa podieľať na systémovej zmene? Pomôžte nám ako dobrovoľník, partner alebo darca.</p>
-    <div class="cta">
-      <a href="#kontakt">Napíšte nám</a>
-    </div>
+  <section class="section">
+    <h2>Členovia v akcii</h2>
+    <img src="images/AMAZONKY.jpeg" alt="Skupina Amazonky" style="width:100%; border-radius:8px; margin:1rem 0;" />
+    <p><em>„Amazonky ukazujú silu komunity a podporu v boji s chorobou.“</em></p>
   </section>
-
-  <footer id="kontakt">
-    <p>Kontaktujte nás na <a href="mailto:info@nezabudnuti.sk">info@nezabudnuti.sk</a></p>
-    <div class="social-links">
-      <a href="https://www.instagram.com/nezabudnuti.sk/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61569530405126" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.linkedin.com/company/asociácia-hospicovej-a-paliatívnej-starostlivosti-slovenska/" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <p>&copy; 2025 nezabudnutí.</p>
-  </footer>
 </body>
 </html>
